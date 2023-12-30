@@ -21,7 +21,7 @@ export const projectItems: ProjectItem[] = [
       {
         icon: AstroIcon,
         name: "Astro",
-        style: "bg-[#281b3f]-500/70 dark:bg-[#281b3f]-500/70"
+        style: "bg-[#281b3f]-500/70 dark:bg-[#281b3f]-500/70 border border-slate-500"
       },
       {
         icon: ReactIcon,
@@ -58,7 +58,7 @@ export const projectItems: ProjectItem[] = [
       {
         icon: NextJS,
         name: "NextJS",
-        style: "bg-black-500/50 dark:bg-black-500/50 border border-salte-500"
+        style: "bg-black-500/50 dark:bg-black-500/50 border border-slate-500"
       },
       {
         icon: ReactIcon,
