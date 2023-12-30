@@ -38,8 +38,7 @@ import SectionContainer from "./SectionContainer.astro";
           class="code col-span-1 row-span-2 h-48 rounded-lg border border-slate-600 shadow-xl shadow-slate-800/50 sm:h-auto"
         >
         </div>
-        <div class="col-span-2 w-full rounded-lg border border-slate-600 shadow-xl shadow-slate-800/50">
-          <img class="rounded-lg" src="/images/steam.webp" width="400px" height="100px" alt="Steam resume" />
+        <div class="steam col-span-2 w-full rounded-lg border border-slate-600 shadow-xl shadow-slate-800/50">
         </div>
       </div>
     </div>
@@ -48,7 +47,11 @@ import SectionContainer from "./SectionContainer.astro";
 
 <style>
   .code {
-    background-image: url("/images/code.png");
+    background-image: url("/images/code.webp");
     background-position: center;
+  }
+  .steam {
+    background-image: url("/images/steam.webp");
+    background-size: 100% 100%;
   }
 </style>
