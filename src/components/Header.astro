@@ -1,0 +1,67 @@
+---
+import Burger from "@/icons/Burger.astro";
+import type { Menu } from "@/types/menu.type";
+
+const menus: Menu[] = [
+  {
+    label: "Home",
+    href: "#home"
+  },
+  {
+    label: "Experience",
+    href: "#experience"
+  },
+  {
+    label: "Projects",
+    href: "#projects"
+  },
+  {
+    label: "About me",
+    href: "#about"
+  },
+  {
+    label: "Contact",
+    href: "#contact"
+  }
+];
+---
+
+<header class="sticky top-0 z-10 flex pt-2 sm:items-center sm:justify-center sm:pt-3">
+  <nav
+    class="relative flex flex-col gap-4 p-2 px-4 sm:static sm:flex-row sm:rounded-full sm:border sm:border-black sm:bg-primary-950/50 sm:backdrop-blur-2xl"
+  >
+    <Burger class="ml-2 sm:hidden" />
+    <div
+      class="navmenu-toggle absolute top-8 hidden flex-col gap-5 bg-transparent sm:static sm:flex sm:flex-row"
+    >
+      {
+        menus.map((item) => (
+          <a
+            href={item.href}
+            id="link"
+            class="mt-3 block text-sm font-medium text-white hover:text-primary-200 sm:mt-auto"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</header>
+
+<script>
+  const menuButton = document.querySelector("#menu");
+  menuButton?.addEventListener("click", () => {
+    document.querySelector(".navmenu-toggle")?.classList.toggle("hidden");
+  });
+  const links = document.querySelectorAll("#link");
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      const navIcon: HTMLElement | null = document.querySelector("#menu");
+      if (navIcon && navIcon.classList.contains("open")) {
+        navIcon.classList.toggle("open");
+        document.querySelector(".navmenu-toggle")?.classList.toggle("hidden");
+      }
+    });
+  });
+</script>

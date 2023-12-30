@@ -1,0 +1,19 @@
+---
+import { cn } from "@/lib/utils";
+interface Props {
+  href: string;
+  class?: string;
+}
+
+const { class: className, href } = Astro.props;
+---
+
+<a
+  href={href}
+  class={cn(
+    `bg-blue-100 gap-2 hover:bg-blue-200 text-blue-800 text-xs font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400 inline-flex items-center justify-center`,
+    className
+  )}
+>
+  <slot />
+</a>

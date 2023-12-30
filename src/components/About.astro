@@ -1,0 +1,54 @@
+---
+import Steam from "@/icons/Steam.astro";
+import X from "@/icons/X.astro";
+import SectionContainer from "./SectionContainer.astro";
+---
+
+<SectionContainer id="about">
+  <div class="flex w-full flex-col gap-8">
+    <h2 class="text-center text-2xl font-semibold sm:ml-40 sm:text-left">About me</h2>
+    <div class="flex w-full flex-col items-center gap-8">
+      <p class="max-w-4xl text-pretty">
+        <span class="text-xl font-bold">Hi there!</span>
+         I'm José Pazmiño. 24 years old. Passionate about video games, anime and programming. I love exploring
+        virtual worlds, immersing myself in anime plots and solving challenges through code.
+      </p>
+      <div class="flex h-full flex-col gap-3 sm:grid sm:grid-cols-3 sm:grid-rows-2 sm:gap-4">
+        <div class="col-span-1 rounded-lg border border-slate-600 bg-black/50 shadow-xl shadow-slate-800/50">
+          <a
+            href="https://twitter.com/JoseP0399"
+            target="_blank"
+            class="flex size-full cursor-pointer items-center justify-center"
+          >
+            <X />
+          </a>
+        </div>
+        <div
+          class="col-span-1 rounded-lg border border-slate-600 bg-[#1b2838]/50 shadow-xl shadow-slate-800/50"
+        >
+          <a
+            href="https://steamcommunity.com/id/bluebird0399/"
+            target="_blank"
+            class="flex size-full cursor-pointer items-center justify-center"
+          >
+            <Steam />
+          </a>
+        </div>
+        <div
+          class="code col-span-1 row-span-2 rounded-lg border border-slate-600 shadow-xl shadow-slate-800/50"
+        >
+        </div>
+        <div class="col-span-2 w-full rounded-lg border border-slate-600 shadow-xl shadow-slate-800/50">
+          <img class="rounded-lg" src="/images/steam.webp" width="400px" height="100px" alt="Steam resume" />
+        </div>
+      </div>
+    </div>
+  </div>
+</SectionContainer>
+
+<style>
+  .code {
+    background-image: url("/images/code.png");
+    background-position: center;
+  }
+</style>

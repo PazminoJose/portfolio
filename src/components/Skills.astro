@@ -1,0 +1,26 @@
+---
+import { colors, levels, skills } from "@/lib/data/skills";
+import Badge from "./Badge.astro";
+import SkillIndicator from "./SkillIndicator.astro";
+---
+
+<div class="flex w-full max-w-6xl flex-col items-center justify-center gap-6">
+  <header class="flex flex-col gap-3 sm:flex-row">
+    <h3 class="text-center text-xl font-bold sm:text-left">Skills</h3>
+    <div class="flex gap-3">
+      {levels.map((level) => <SkillIndicator class={level.color}>{level.description}</SkillIndicator>)}
+    </div>
+  </header>
+  <div
+    class="grid auto-cols-max grid-flow-col grid-cols-3 grid-rows-8 gap-x-3 gap-y-4 sm:grid-cols-8 sm:grid-rows-3"
+  >
+    {
+      skills.map((skill) => (
+        <Badge class={`${colors[skill.level]} dark:${colors[skill.level]} text-white dark:text-white`}>
+          <skill.icon />
+          {skill.name}
+        </Badge>
+      ))
+    }
+  </div>
+</div>

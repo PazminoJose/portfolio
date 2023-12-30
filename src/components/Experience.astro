@@ -1,0 +1,15 @@
+---
+import ExperienceTimeLine from "@/components/ExperienceTimeLine.astro";
+import SectionContainer from "./SectionContainer.astro";
+import Skills from "./Skills.astro";
+---
+
+<SectionContainer id="experience">
+  <div class="flex w-full flex-col gap-8">
+    <h2 class="text-center text-2xl font-semibold sm:ml-40 sm:text-left">Experience</h2>
+    <div class="flex w-full flex-col items-center gap-8">
+      <Skills />
+      <ExperienceTimeLine />
+    </div>
+  </div>
+</SectionContainer>

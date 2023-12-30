@@ -1,0 +1,98 @@
+---
+import { cn, range } from "@/lib/utils/index";
+interface Props {
+  class?: string;
+  color?: string;
+  id?: string;
+}
+
+const { class: className, color } = Astro.props;
+
+const burgerLines = range(1, 4);
+---
+
+<button id="menu" class={cn("w-6 h-5 relative", className)}>
+  {
+    burgerLines.map(() => (
+      <span class={cn("absolute left-0 block w-full rounded-lg bg-white opacity-100", color)} />
+    ))
+  }
+</button>
+<style>
+  :root {
+    --top-value: 7px;
+    --height: 3px;
+  }
+
+  #menu {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+  }
+
+  #menu span {
+    height: var(--height);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+  }
+
+  #menu span:nth-child(1) {
+    top: 0px;
+  }
+
+  #menu span:nth-child(2),
+  #menu span:nth-child(3) {
+    top: var(--top-value);
+  }
+
+  #menu span:nth-child(4) {
+    top: calc(var(--top-value) * 2);
+  }
+
+  #menu.open span:nth-child(1) {
+    top: var(--top-value);
+    width: 0%;
+    left: 50%;
+  }
+
+  #menu.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  #menu.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  #menu.open span:nth-child(4) {
+    top: var(--top-value);
+    width: 0%;
+    left: 50%;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navIcon: HTMLElement | null = document.querySelector("#menu");
+    if (navIcon) {
+      navIcon.addEventListener("click", function (this: HTMLElement) {
+        this.classList.toggle("open");
+      });
+    }
+  });
+</script>

@@ -1,0 +1,44 @@
+---
+import GitHub from "@/icons/react/GitHub.tsx";
+import Linkedin from "@/icons/react/Linkedin.tsx";
+import Mail from "@/icons/react/Mail.tsx";
+import Badge from "./Badge.astro";
+import BadgeLink from "./BadgeLink.astro";
+import SectionContainer from "./SectionContainer.astro";
+---
+
+<SectionContainer class="py-44" id="home">
+  <div class="flex flex-col items-center gap-4 sm:max-w-2xl sm:items-baseline">
+    <div class="flex flex-col gap-2 sm:flex-row">
+      <h1 class="text-center text-4xl font-black sm:text-6xl">José Pazmiño</h1>
+      <Badge class="self-center sm:self-start">FullStack Developer</Badge>
+    </div>
+    <p class="text-pretty px-8 text-center sm:max-w-full sm:p-0 sm:text-left sm:text-inherit">
+      Passionate about programming and self-learning. I specialize in designing robust, interactive, scalable,
+      and unique applications using modern technologies such as React, Next.js, Astro, Tailwind, and NestJS
+    </p>
+    <div class="flex max-w-fit flex-col gap-4 sm:flex-row">
+      <BadgeLink
+        class="bg-black/50 font-semibold text-white hover:bg-gray-800 dark:bg-black/50 dark:text-white"
+        href="https://github.com/BlueBird0399"
+      >
+        <GitHub />
+         GitHub
+      </BadgeLink>
+      <BadgeLink
+        class="bg-blue-600/50 font-semibold text-white hover:bg-blue-800 dark:bg-blue-600/50 dark:text-white"
+        href="https://www.linkedin.com/in/josé-pazmiño-6021ba25a/"
+      >
+        <Linkedin />
+         Linkedin
+      </BadgeLink>
+      <BadgeLink
+        class="bg-cyan-800/50 font-semibold text-white hover:bg-cyan-900 dark:bg-cyan-800/50 dark:text-white"
+        href="mailto:pepe.paz0399@gmail.com"
+      >
+        <Mail />
+         pepe.paz0399@gmail.com
+      </BadgeLink>
+    </div>
+  </div>
+</SectionContainer>

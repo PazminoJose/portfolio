@@ -1,0 +1,28 @@
+---
+import About from "@/components/About.astro";
+import Contact from "@/components/Contact.astro";
+import Experience from "@/components/Experience.astro";
+import Home from "@/components/Home.astro";
+import Projects from "@/components/Projects.astro";
+import { Separator } from "@/components/react/Separator";
+import Layout from "../layouts/Layout.astro";
+
+const title = "Portfolio José Pazmiño - Fullstack Developer and Programmer";
+const description = `Welcome to José Pazmiño's portfolio—experience the fusion of creativity and technical 
+mastery in Fullstack Development. Explore innovative projects showcasing expertise in front-end 
+design and robust back-end systems, all crafted to deliver exceptional user-centric solutions.`;
+---
+
+<Layout title={title} description={description}>
+  <main class="flex h-full flex-col overflow-y-auto overflow-x-hidden scroll-smooth">
+    <Home />
+    <Separator className="m-auto my-16 w-[90%]" />
+    <Experience />
+    <Separator className="m-auto my-16 w-[90%]" />
+    <Projects />
+    <Separator className="m-auto my-16 w-[90%]" />
+    <About />
+    <Separator className="m-auto my-16 w-[90%]" />
+    <Contact />
+  </main>
+</Layout>

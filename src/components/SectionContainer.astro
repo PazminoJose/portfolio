@@ -1,0 +1,13 @@
+---
+import { cn } from "@/lib/utils";
+interface Props {
+  id?: string;
+  class?: string;
+}
+
+const { class: className, id } = Astro.props;
+---
+
+<section id={id} data-section={id} class={cn("h-full flex justify-center items-center p-4", className)}>
+  <slot />
+</section>
