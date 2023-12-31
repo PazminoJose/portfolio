@@ -24,7 +24,7 @@ export default function ProjectShowcase() {
                 <AccordionTrigger className="text-xl font-bold">{item.title}</AccordionTrigger>
                 <AccordionContent className="max-w-xl text-pretty">
                   <p className="mb-2">{item.description}</p>
-                  <div className="grid auto-cols-max grid-flow-col grid-cols-4 grid-rows-2 gap-x-3 gap-y-4">
+                  <div className="grid auto-cols-max grid-flow-col grid-cols-2  grid-rows-3 gap-x-3 gap-y-4 sm:grid-cols-4 sm:grid-rows-2">
                     {item.technologies?.map((technology) => (
                       <Badge key={technology.name} className={technology.style}>
                         <technology.icon />
