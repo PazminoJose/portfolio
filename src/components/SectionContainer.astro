@@ -8,6 +8,40 @@ interface Props {
 const { class: className, id } = Astro.props;
 ---
 
-<section id={id} data-section={id} class={cn("h-full flex justify-center items-center p-4", className)}>
+<section
+  id={id}
+  data-section={id}
+  className={cn("app-section flex h-full items-center justify-center p-4 opacity-0", className)}
+>
   <slot />
 </section>
+
+<script>
+  const elementsToObserve = document.querySelectorAll(".app-section");
+
+  if (elementsToObserve.length > 0) {
+    const options: IntersectionObserverInit = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.23
+    };
+
+    const intersectCallback: IntersectionObserverCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fade-up", "animate-ease-out", "animate-delay-100");
+        } else {
+          entry.target.classList.remove("animate-fade-up", "animate-ease-out", "animate-delay-100");
+        }
+      });
+    };
+
+    const observers: IntersectionObserver[] = [];
+
+    elementsToObserve.forEach((element) => {
+      const observer = new IntersectionObserver(intersectCallback, options);
+      observer.observe(element);
+      observers.push(observer);
+    });
+  }
+</script>

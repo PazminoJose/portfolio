@@ -10,14 +10,15 @@ import SectionContainer from "./SectionContainer.astro";
     <div class="flex w-full flex-col items-center gap-8">
       <p class="max-w-4xl text-pretty">
         <span class="text-xl font-bold">Hi there!</span>
-         I'm José Pazmiño. 24 years old. Passionate about video games, anime and programming. I love exploring
-        virtual worlds, immersing myself in anime plots and solving challenges through code.
+         I'm José Pazmiño. 24 years old. Passionate about programming, video games and anime. I love solving
+        challenges through code, exploring virtual worlds and immersing myself in anime plots .
       </p>
       <div class="flex h-full flex-col gap-3 sm:grid sm:grid-cols-3 sm:grid-rows-2 sm:gap-4">
         <div class="col-span-1 rounded-lg border border-slate-600 bg-black/50 shadow-xl shadow-slate-800/50">
           <a
             href="https://twitter.com/JoseP0399"
             target="_blank"
+            aria-label="X social media"
             class="flex size-full cursor-pointer items-center justify-center"
           >
             <X />
@@ -29,6 +30,7 @@ import SectionContainer from "./SectionContainer.astro";
           <a
             href="https://steamcommunity.com/id/bluebird0399/"
             target="_blank"
+            aria-label="steam profile"
             class="flex size-full cursor-pointer items-center justify-center"
           >
             <Steam />

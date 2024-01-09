@@ -1,7 +1,7 @@
 ---
 import { colors, levels, skills } from "@/lib/data/skills";
-import Badge from "./Badge.astro";
 import SkillIndicator from "./SkillIndicator.astro";
+import Badge from "./react/Badge";
 ---
 
 <div class="flex w-full max-w-6xl flex-col items-center justify-center gap-6">
@@ -16,7 +16,7 @@ import SkillIndicator from "./SkillIndicator.astro";
   >
     {
       skills.map((skill) => (
-        <Badge class={`${colors[skill.level]} dark:${colors[skill.level]} text-white dark:text-white`}>
+        <Badge className={`${colors[skill.level]} dark:${colors[skill.level]} `}>
           <skill.icon />
           {skill.name}
         </Badge>
