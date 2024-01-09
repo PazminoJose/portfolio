@@ -168,7 +168,7 @@ export const projectItems: ProjectItem[] = [
     image: artectt
   },
   {
-    title: "PMV",
+    title: "Financial Journey",
     description: `Web application for the management of the game 'Financial Journey' by the 
     cooperative Pablo Muñoz Vega, a game similar to Pokémon GO.`,
     technologies: [
