@@ -1,8 +1,11 @@
+import AppWindow from "@/icons/react/AppWindow";
+import GitHub from "@/icons/react/GitHub";
 import { projectItems } from "@/lib/data/projectItems";
 import { positiveMod } from "@/lib/utils/positiveMod";
 import { useState } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./Acordion";
 import Badge from "./Badge";
+import BadgeLink from "./BadgeLink";
 
 const titleHeight = 32;
 
@@ -21,9 +24,26 @@ export default function ProjectShowcase() {
             };
             return (
               <AccordionItem onClick={handleItemClick} key={item.title} value={index.toString()}>
-                <AccordionTrigger className="text-xl font-bold">{item.title}</AccordionTrigger>
+                <AccordionTrigger className="group z-10 text-xl font-bold">
+                  <h3 className="text-emerald-400 group-hover:underline">{item.title}</h3>
+                </AccordionTrigger>
                 <AccordionContent className="max-w-xl text-pretty">
                   <p className="mb-2">{item.description}</p>
+                  <h4 className="my-3 text-center text-lg font-semibold text-cyan-600">Links</h4>
+                  <div className="mr-14 flex w-full justify-center gap-3">
+                    <BadgeLink
+                      href={item.githubUrl}
+                      className="bg-black/50 hover:bg-gray-800 dark:bg-black/50"
+                    >
+                      <GitHub />
+                      GitGub
+                    </BadgeLink>
+                    <BadgeLink href={item.liveUrl.toString()}>
+                      <AppWindow />
+                      Demo
+                    </BadgeLink>
+                  </div>
+                  <h4 className="my-3 text-center text-lg font-semibold text-cyan-600">Technologies</h4>
                   <div className="grid auto-cols-max grid-flow-col grid-cols-2  grid-rows-3 gap-x-3 gap-y-4 sm:grid-cols-4 sm:grid-rows-2">
                     {item.technologies?.map((technology) => (
                       <Badge key={technology.name} className={technology.style}>
