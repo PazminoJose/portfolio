@@ -44,6 +44,7 @@ export const projectItems: ProjectItem[] = [
         style: "bg-blue-700/70 dark:bg-blue-700/70"
       }
     ],
+    githubUrl: "https://github.com/PazminoJose/spotify-clone",
     liveUrl: new URL("https://spotify-clone-khaki-seven.vercel.app"),
     image: spotifyClone
   },
@@ -86,6 +87,7 @@ export const projectItems: ProjectItem[] = [
         style: "bg-blue-600/70 dark:bg-blue-600/70"
       }
     ],
+    githubUrl: "https://github.com/PazminoJose/vivo-vivo-app",
     liveUrl: new URL("https://vivo-vivo-app-production.up.railway.app"),
     image: vivoVivo
   }
