@@ -64,6 +64,7 @@ export default {
 		},
 	},
 	plugins: [
+		require('tailwindcss-animated'),
 		nextui({
 			defaultTheme: "dark"
 		})
