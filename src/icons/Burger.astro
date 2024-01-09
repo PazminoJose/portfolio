@@ -11,7 +11,7 @@ const { class: className, color } = Astro.props;
 const burgerLines = range(1, 4);
 ---
 
-<button id="menu" class={cn("w-6 h-5 relative", className)}>
+<button id="menu" aria-label="menu" class={cn("w-6 h-5 relative", className)}>
   {
     burgerLines.map(() => (
       <span class={cn("absolute left-0 block w-full rounded-lg bg-white opacity-100", color)} />
