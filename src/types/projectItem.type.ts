@@ -4,7 +4,7 @@ export type ProjectItem = {
   title: string;
   description: string;
   technologies: Technology[];
-  githubUrl: string;
-  liveUrl: URL;
+  githubUrl?: string;
+  liveUrl?: URL;
   image: ImageMetadata;
 };
