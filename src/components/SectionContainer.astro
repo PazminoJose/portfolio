@@ -11,7 +11,7 @@ const { class: className, id } = Astro.props;
 <section
   id={id}
   data-section={id}
-  className={cn("app-section flex h-full items-center justify-center p-4 opacity-0", className)}
+  class={cn("app-section flex h-full items-center justify-center p-4 opacity-0", className)}
 >
   <slot />
 </section>
