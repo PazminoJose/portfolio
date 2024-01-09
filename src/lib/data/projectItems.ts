@@ -1,10 +1,20 @@
+import artectt from "@/assets/images/artectt.webp";
+import pmv from "@/assets/images/pmv.webp";
+import portfolio from "@/assets/images/portfolio.webp";
 import spotifyClone from "@/assets/images/spotify-clone.webp";
 import vivoVivo from "@/assets/images/vivo-vivo.webp";
+import Angular from "@/icons/react/Angular";
 import AstroIcon from "@/icons/react/AstroIcon";
+import Dart from "@/icons/react/Dart";
+import Flutter from "@/icons/react/Flutter";
+import Java from "@/icons/react/Java";
+import Mongo from "@/icons/react/Mongo";
+import MySQL from "@/icons/react/MySQL";
 import NestJS from "@/icons/react/NestJS";
 import NextJS from "@/icons/react/NextJS";
 import PostgreSQL from "@/icons/react/PostgreSQL";
 import ReactIcon from "@/icons/react/ReactIcon";
+import SpringBoot from "@/icons/react/SpringBoot";
 import Tailwind from "@/icons/react/Tailwind";
 import TypeScript from "@/icons/react/TypeScript";
 import type { ProjectItem } from "@/types/projectItem.type";
@@ -32,11 +42,6 @@ export const projectItems: ProjectItem[] = [
         icon: Tailwind,
         name: "Tailwind",
         style: "bg-blue-500/70 dark:bg-blue-500/70"
-      },
-      {
-        icon: NestJS,
-        name: "NestJS",
-        style: "bg-rose-600/70 dark:bg-rose-600/70"
       },
       {
         icon: TypeScript,
@@ -90,5 +95,104 @@ export const projectItems: ProjectItem[] = [
     githubUrl: "https://github.com/PazminoJose/vivo-vivo-app",
     liveUrl: new URL("https://vivo-vivo-app-production.up.railway.app"),
     image: vivoVivo
+  },
+  {
+    title: "Portfolio",
+    description: `Step into my digital realm—a vibrant showcase boasting my experience, diverse 
+    projects, and top-notch skills. It's not just a portfolio; it's an open invitation to connect 
+    and explore possibilities.`,
+    technologies: [
+      {
+        icon: AstroIcon,
+        name: "Astro",
+        style: "bg-[#281b3f]-500/70 dark:bg-[#281b3f]-500/70 border border-slate-500"
+      },
+      {
+        icon: ReactIcon,
+        name: "React",
+        style: "bg-blue-400/70 dark:bg-blue-400/70"
+      },
+      {
+        icon: Tailwind,
+        name: "Tailwind",
+        style: "bg-blue-500/70 dark:bg-blue-500/70"
+      },
+      {
+        icon: TypeScript,
+        name: "TypeScript",
+        style: "bg-blue-700/70 dark:bg-blue-700/70"
+      }
+    ],
+    githubUrl: "https://github.com/PazminoJose/portfolio",
+    liveUrl: new URL("https://portfolio-tau-beryl-54.vercel.app"),
+    image: portfolio
+  },
+  {
+    title: "Arte CTT",
+    description: `Virtual gallery that shows the art collection of the Tungurahua Culture House. 
+    Immerse yourself in the rich history of each painting, accompanied by narrations that provide 
+    insight into the artistic journey. Using the QR scanner feature you can easily discover 
+    specific works of art, enhancing your overall gallery experience.`,
+    technologies: [
+      {
+        icon: Flutter,
+        name: "Flutter",
+        style: "bg-sky-400/70 dark:bg-sky-400/70"
+      },
+      {
+        icon: Dart,
+        name: "Dart",
+        style: "bg-blue-400/70 dark:bg-blue-400/70"
+      },
+      {
+        icon: Angular,
+        name: "Angular",
+        style: "bg-red-500/70 dark:bg-red-500/70"
+      },
+      {
+        icon: MySQL,
+        name: "MySQL",
+        style: "bg-blue-700/70 dark:bg-blue-700/70"
+      },
+      {
+        icon: Java,
+        name: "Java",
+        style: "bg-orange-700/70 dark:bg-orange-700/70"
+      },
+      {
+        icon: SpringBoot,
+        name: "Spring Boot",
+        style: "bg-green-700/70 dark:bg-green-700/70"
+      }
+    ],
+    image: artectt
+  },
+  {
+    title: "PMV",
+    description: `Web application for the management of the game 'Financial Journey' by the 
+    cooperative Pablo Muñoz Vega, a game similar to Pokémon GO.`,
+    technologies: [
+      {
+        icon: ReactIcon,
+        name: "React",
+        style: "bg-blue-400/70 dark:bg-blue-400/70"
+      },
+      {
+        icon: TypeScript,
+        name: "TypeScript",
+        style: "bg-blue-700/70 dark:bg-blue-700/70"
+      },
+      {
+        icon: Mongo,
+        name: "Mongo",
+        style: "bg-green-500/70 dark:bg-green-500/70"
+      },
+      {
+        icon: NestJS,
+        name: "NestsJS",
+        style: "bg-rose-600/70 dark:bg-rose-600/70"
+      }
+    ],
+    image: pmv
   }
 ];

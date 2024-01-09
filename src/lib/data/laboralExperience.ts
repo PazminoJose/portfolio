@@ -1,3 +1,4 @@
+import Building from "@/icons/react/Building";
 import Dart from "@/icons/react/Dart";
 import Flutter from "@/icons/react/Flutter";
 import Laravel from "@/icons/react/Laravel";
@@ -6,6 +7,7 @@ import type { TimeLineElement } from "@/types/timeLineElement.type";
 
 export const laboralExperience: TimeLineElement[] = [
   {
+    icon: Building,
     date: "2023",
     title: "Encuba's Company intern",
     description: 'Development of a scholastic system for the "Instituto Superior Universitario ITCA"',
@@ -23,6 +25,7 @@ export const laboralExperience: TimeLineElement[] = [
     ]
   },
   {
+    icon: Building,
     date: "2023",
     title: "Liaison Intern",
     description: `Development of a mobile application for the cultural center of Tungurahua to visualize 

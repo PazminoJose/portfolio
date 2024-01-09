@@ -1,7 +1,9 @@
+import Books from "@/icons/react/Books";
 import type { TimeLineElement } from "@/types/timeLineElement.type";
 
 export const education: TimeLineElement[] = [
   {
+    icon: Books,
     date: "2016",
     title: "Bachelor's degree",
     description: "Science Bachelor",
@@ -13,6 +15,7 @@ export const education: TimeLineElement[] = [
     ]
   },
   {
+    icon: Books,
     date: "2023",
     title: "MINISTRY OF LABOR",
     description:

@@ -1,7 +1,9 @@
+import Certificate from "@/icons/react/Certificate";
 import type { TimeLineElement } from "@/types/timeLineElement.type";
 
 export const certificates: TimeLineElement[] = [
   {
+    icon: Certificate,
     date: "2021",
     title: "CSEI 2021",
     description: "III Conference on Computer Science, Electronics and Industrial Engineering (CSE12021)",
@@ -13,6 +15,7 @@ export const certificates: TimeLineElement[] = [
     ]
   },
   {
+    icon: Certificate,
     date: "2022",
     title: "CSEI 2022",
     description: `IV Conference on Computer Science, Electronics and Industrial Engineering (CSE12022)`,
@@ -24,6 +27,7 @@ export const certificates: TimeLineElement[] = [
     ]
   },
   {
+    icon: Certificate,
     date: "2022",
     title: "Google Study Conference",
     description: "INSPIRING STUDY CONFERENCE WITH GOOGLE",
@@ -35,6 +39,7 @@ export const certificates: TimeLineElement[] = [
     ]
   },
   {
+    icon: Certificate,
     date: "2023",
     title: "CSEI 2023",
     description: `V Conference on Computer Science, Electronics and Industrial Engineering (CSE12023)`,
