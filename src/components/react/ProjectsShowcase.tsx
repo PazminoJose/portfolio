@@ -29,22 +29,27 @@ export default function ProjectShowcase() {
                 </AccordionTrigger>
                 <AccordionContent className="max-w-xl text-pretty">
                   <p className="mb-2">{item.description}</p>
-                  <h4 className="my-3 text-center text-lg font-semibold text-cyan-600">Links</h4>
-                  <div className="mr-14 flex w-full justify-center gap-3">
-                    <BadgeLink
-                      href={item.githubUrl}
-                      className="bg-black/50 hover:bg-gray-800 dark:bg-black/50"
-                    >
-                      <GitHub />
-                      GitGub
-                    </BadgeLink>
-                    <BadgeLink href={item.liveUrl.toString()}>
-                      <AppWindow />
-                      Demo
-                    </BadgeLink>
-                  </div>
+                  {(item.githubUrl || item.liveUrl) && (
+                    <>
+                      <h4 className="my-3 text-center text-lg font-semibold text-cyan-600">Links</h4>
+                      <div className="mr-14 flex w-full justify-center gap-3">
+                        <BadgeLink
+                          href={item.githubUrl ?? ""}
+                          className="bg-black/50 hover:bg-gray-800 dark:bg-black/50"
+                        >
+                          <GitHub />
+                          GitGub
+                        </BadgeLink>
+                        <BadgeLink href={item.liveUrl?.toString() ?? ""}>
+                          <AppWindow />
+                          Demo
+                        </BadgeLink>
+                      </div>
+                    </>
+                  )}
+
                   <h4 className="my-3 text-center text-lg font-semibold text-cyan-600">Technologies</h4>
-                  <div className="grid auto-cols-max grid-flow-col grid-cols-2  grid-rows-3 gap-x-3 gap-y-4 sm:grid-cols-4 sm:grid-rows-2">
+                  <div className="grid auto-cols-max grid-flow-col grid-cols-2 grid-rows-3  gap-x-3 gap-y-4 sm:grid-flow-row sm:grid-cols-4 sm:grid-rows-2">
                     {item.technologies?.map((technology) => (
                       <Badge key={technology.name} className={technology.style}>
                         <technology.icon />
@@ -83,7 +88,7 @@ export default function ProjectShowcase() {
               <a
                 key={index}
                 tabIndex={-1}
-                href={item.liveUrl.href}
+                href={item.liveUrl?.href ?? ""}
                 target="_blank"
                 style={style}
                 className={`panel left-0 top-0 block w-full translate-y-[var(--translate)] transition-transform md:translate-x-[var(--translate)] ${
@@ -92,7 +97,7 @@ export default function ProjectShowcase() {
                 data-card
               >
                 <p className="code flex items-center justify-center py-1 text-sm" aria-hidden="true">
-                  {item.liveUrl.hostname}
+                  {item.liveUrl?.hostname ?? ""}
                 </p>
                 <img
                   src={item.image.src}
