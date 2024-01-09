@@ -10,7 +10,7 @@ export const certificates: TimeLineElement[] = [
     links: [
       {
         title: "View Certificate",
-        href: "/docs/CSEI%202021%20participación.pdf"
+        href: "/docs/CSEI%202021.pdf"
       }
     ]
   },
@@ -22,7 +22,7 @@ export const certificates: TimeLineElement[] = [
     links: [
       {
         title: "View Certificate",
-        href: "/docs/CSEI%202022%20participación.pdf"
+        href: "/docs/CSEI%202022.pdf"
       }
     ]
   },
@@ -46,7 +46,7 @@ export const certificates: TimeLineElement[] = [
     links: [
       {
         title: "View Certificate",
-        href: "/docs/CSEI%202023%20participación.PDF"
+        href: "/docs/CSEI%202023.pdf"
       }
     ]
   }
