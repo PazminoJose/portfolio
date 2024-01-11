@@ -13,8 +13,14 @@ import SectionContainer from "./SectionContainer.astro";
         I'm José Pazmiño, 24 years old, using programming as a tool to tackle challenges, while diving into the
         virtual worlds of video games and immersing myself in anime plots.
       </p>
-      <div class="flex h-full flex-col gap-3 sm:grid sm:grid-cols-3 sm:grid-rows-2 sm:gap-4">
-        <div class="col-span-1 rounded-lg border border-slate-600 bg-black/50 shadow-xl shadow-slate-800/50">
+      <div class="flex h-full flex-col gap-3 sm:grid sm:grid-cols-4 sm:grid-rows-2 sm:gap-4">
+        <div
+          class="tuapp col-span-1 row-span-2 h-48 w-full rounded-lg border border-slate-600 shadow-xl shadow-slate-800/50 sm:h-auto"
+        >
+        </div>
+        <div
+          class="col-span-1 rounded-lg border border-slate-600 bg-black/50 py-6 shadow-xl shadow-slate-800/50 sm:py-0"
+        >
           <a
             href="https://twitter.com/JoseP0399"
             target="_blank"
@@ -50,6 +56,11 @@ import SectionContainer from "./SectionContainer.astro";
 </SectionContainer>
 
 <style>
+  .tuapp {
+    background-image: url("/images/tuapp-competition.webp");
+    background-size: cover;
+    background-position: 70%;
+  }
   .code {
     background-image: url("/images/code.webp");
     background-position: center;
