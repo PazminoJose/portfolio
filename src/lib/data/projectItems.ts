@@ -1,6 +1,5 @@
 import artectt from "@/assets/images/artectt.webp";
 import pmv from "@/assets/images/pmv.webp";
-import portfolio from "@/assets/images/portfolio.webp";
 import spotifyClone from "@/assets/images/spotify-clone.webp";
 import vivoVivo from "@/assets/images/vivo-vivo.webp";
 import Angular from "@/icons/react/Angular";
@@ -95,37 +94,6 @@ export const projectItems: ProjectItem[] = [
     githubUrl: "https://github.com/PazminoJose/vivo-vivo-app",
     liveUrl: new URL("https://vivo-vivo-app-production.up.railway.app"),
     image: vivoVivo
-  },
-  {
-    title: "Portfolio",
-    description: `Step into my digital realm—a vibrant showcase boasting my experience, diverse 
-    projects, and top-notch skills. It's not just a portfolio; it's an open invitation to connect 
-    and explore possibilities.`,
-    technologies: [
-      {
-        icon: AstroIcon,
-        name: "Astro",
-        style: "bg-[#281b3f]-500/70 dark:bg-[#281b3f]-500/70 border border-slate-500"
-      },
-      {
-        icon: ReactIcon,
-        name: "React",
-        style: "bg-blue-400/70 dark:bg-blue-400/70"
-      },
-      {
-        icon: Tailwind,
-        name: "Tailwind",
-        style: "bg-blue-500/70 dark:bg-blue-500/70"
-      },
-      {
-        icon: TypeScript,
-        name: "TypeScript",
-        style: "bg-blue-700/70 dark:bg-blue-700/70"
-      }
-    ],
-    githubUrl: "https://github.com/PazminoJose/portfolio",
-    liveUrl: new URL("https://portfolio-tau-beryl-54.vercel.app"),
-    image: portfolio
   },
   {
     title: "Arte CTT",
