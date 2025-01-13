@@ -2,6 +2,8 @@
 import Steam from "@/icons/Steam.astro";
 import X from "@/icons/X.astro";
 import SectionContainer from "./SectionContainer.astro";
+const dayBirth = new Date("1999-03-03");
+const age = new Date(Date.now() - dayBirth.getTime()).getFullYear() - 1970;
 ---
 
 <SectionContainer id="about">
@@ -10,8 +12,8 @@ import SectionContainer from "./SectionContainer.astro";
     <div class="flex w-full flex-col items-center gap-8">
       <p class="max-w-4xl text-pretty">
         <span class="text-xl font-bold">Hi there!</span>
-        I'm José Pazmiño, 24 years old, using programming as a tool to tackle challenges, while diving into the
-        virtual worlds of video games and immersing myself in anime plots.
+        I'm José Pazmiño, a {age} year old developer who leverages programming as a powerful tool to solve challenges.
+        Beyond coding, I enjoy playing video games and watching anime.
       </p>
       <div class="flex h-full flex-col gap-3 sm:grid sm:grid-cols-4 sm:grid-rows-2 sm:gap-4">
         <div
