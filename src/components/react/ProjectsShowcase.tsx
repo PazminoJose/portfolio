@@ -1,5 +1,6 @@
 import AppWindow from "@/icons/react/AppWindow";
 import GitHub from "@/icons/react/GitHub";
+import NPM from "@/icons/react/NPM";
 import { projectItems } from "@/lib/data/projectItems";
 import { cn } from "@/lib/utils";
 import { positiveMod } from "@/lib/utils/positiveMod";
@@ -30,27 +31,40 @@ export default function ProjectShowcase() {
                 </AccordionTrigger>
                 <AccordionContent className="max-w-xl text-pretty">
                   <p className="mb-2">{item.description}</p>
-                  {(item.githubUrl || item.liveUrl) && (
+                  {(item.githubUrl || item.liveUrl || item.npmUrl) && (
                     <>
                       <h4 className="my-3 text-center text-lg font-semibold text-cyan-600">Links</h4>
                       <div className="mr-14 flex w-full justify-center gap-3">
-                        <BadgeLink
-                          href={item.githubUrl ?? ""}
-                          className="bg-black/50 hover:bg-gray-800 dark:bg-black/50"
-                        >
-                          <GitHub />
-                          GitGub
-                        </BadgeLink>
-                        <BadgeLink href={item.liveUrl?.toString() ?? ""}>
-                          <AppWindow />
-                          Demo
-                        </BadgeLink>
+                        {item.githubUrl && (
+                          <BadgeLink
+                            href={item.githubUrl ?? ""}
+                            className="bg-black/50 hover:bg-gray-800 dark:bg-black/50"
+                          >
+                            <GitHub />
+                            GitGub
+                          </BadgeLink>
+                        )}
+                        {item.liveUrl && (
+                          <BadgeLink href={item.liveUrl?.toString() ?? ""}>
+                            <AppWindow />
+                            Demo
+                          </BadgeLink>
+                        )}
+                        {item.npmUrl && (
+                          <BadgeLink
+                            href={item.npmUrl.toString()}
+                            className="bg-red-500/70 hover:bg-red-600 dark:bg-red-500/70"
+                          >
+                            <NPM />
+                            NPM
+                          </BadgeLink>
+                        )}
                       </div>
                     </>
                   )}
 
                   <h4 className="my-3 text-center text-lg font-semibold text-cyan-600">Technologies</h4>
-                  <div className="grid auto-cols-max grid-flow-col grid-cols-2 grid-rows-3  gap-x-3 gap-y-4 sm:grid-flow-row sm:grid-cols-4 sm:grid-rows-2">
+                  <div className="grid auto-cols-max grid-flow-col grid-cols-2 grid-rows-3 gap-x-3 gap-y-4 sm:grid-flow-row sm:grid-cols-4 sm:grid-rows-2">
                     {item.technologies?.map((technology) => (
                       <Badge key={technology.name} className={technology.style}>
                         <technology.icon />
@@ -64,13 +78,6 @@ export default function ProjectShowcase() {
           })}
         </Accordion>
       </section>
-      {/* <section className="relative rounded-md px-2 sm:px-0 md:w-1/2">
-        <div
-          className="animate-tilt absolute -inset-0.5 h-[105%]  w-[105%] rounded-lg bg-gradient-to-r 
-        from-[#4af2c8] to-[#2f4cb3] opacity-20 blur transition duration-1000 group-hover:opacity-100 
-        group-hover:duration-200"
-        ></div> */}
-
       <div
         aria-label="Example Previews"
         style={{ paddingBottom: `calc(${titleHeight}px * ${projectItems.length - 1})` }}
@@ -87,7 +94,7 @@ export default function ProjectShowcase() {
             <a
               key={index}
               tabIndex={-1}
-              href={item.liveUrl?.href ?? ""}
+              href={item.liveUrl?.href ?? item.npmUrl?.href ?? ""}
               target="_blank"
               style={style}
               className={cn(
@@ -113,7 +120,6 @@ export default function ProjectShowcase() {
           );
         })}
       </div>
-      {/* </section> */}
     </div>
   );
 }

@@ -6,5 +6,6 @@ export type ProjectItem = {
   technologies: Technology[];
   githubUrl?: string;
   liveUrl?: URL;
+  npmUrl?: URL;
   image: ImageMetadata;
 };

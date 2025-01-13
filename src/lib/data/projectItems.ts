@@ -1,5 +1,5 @@
 import artectt from "@/assets/images/artectt.webp";
-import pmv from "@/assets/images/pmv.webp";
+import npm from "@/assets/images/npm.webp";
 import spotifyClone from "@/assets/images/spotify-clone.webp";
 import vivoVivo from "@/assets/images/vivo-vivo.webp";
 import Angular from "@/icons/react/Angular";
@@ -7,10 +7,10 @@ import AstroIcon from "@/icons/react/AstroIcon";
 import Dart from "@/icons/react/Dart";
 import Flutter from "@/icons/react/Flutter";
 import Java from "@/icons/react/Java";
-import Mongo from "@/icons/react/Mongo";
 import MySQL from "@/icons/react/MySQL";
 import NestJS from "@/icons/react/NestJS";
 import NextJS from "@/icons/react/NextJS";
+import Node from "@/icons/react/Node";
 import PostgreSQL from "@/icons/react/PostgreSQL";
 import ReactIcon from "@/icons/react/ReactIcon";
 import SpringBoot from "@/icons/react/SpringBoot";
@@ -19,6 +19,31 @@ import TypeScript from "@/icons/react/TypeScript";
 import type { ProjectItem } from "@/types/projectItem.type";
 
 export const projectItems: ProjectItem[] = [
+  {
+    title: "(NPM Package) nestjs-node-onesignal",
+    description: `NestJS wrapper for OneSignal API. This library provides a simple way to interact with the OneSignal API for 
+    sending push notifications, mails, and SMS. It include a notification builder to create notifications easily.`,
+    technologies: [
+      {
+        icon: TypeScript,
+        name: "TypeScript",
+        style: "bg-blue-700/70 dark:bg-blue-700/70"
+      },
+      {
+        icon: NestJS,
+        name: "NestsJS",
+        style: "bg-rose-600/70 dark:bg-rose-600/70"
+      },
+      {
+        icon: Node,
+        name: "NodeJS",
+        style: "bg-green-500/70 dark:bg-green-500/70"
+      }
+    ],
+    githubUrl: "https://github.com/PazminoJose/nestjs-node-onesignal",
+    npmUrl: new URL("https://www.npmjs.com/package/nestjs-node-onesignal"),
+    image: npm
+  },
   {
     title: "Spotify Clone",
     description: `This app clone is a demonstration that mirrors the essence of Spotify's music streaming platform. 
@@ -92,7 +117,7 @@ export const projectItems: ProjectItem[] = [
       }
     ],
     githubUrl: "https://github.com/PazminoJose/vivo-vivo-app",
-    liveUrl: new URL("https://vivo-vivo-app-production.up.railway.app"),
+    // liveUrl: new URL("https://vivo-vivo-app-production.up.railway.app"),
     image: vivoVivo
   },
   {
@@ -134,33 +159,5 @@ export const projectItems: ProjectItem[] = [
       }
     ],
     image: artectt
-  },
-  {
-    title: "Financial Journey",
-    description: `Web application for the management of the game 'Financial Journey' by the 
-    cooperative Pablo Muñoz Vega, a game similar to Pokémon GO.`,
-    technologies: [
-      {
-        icon: ReactIcon,
-        name: "React",
-        style: "bg-blue-400/70 dark:bg-blue-400/70"
-      },
-      {
-        icon: TypeScript,
-        name: "TypeScript",
-        style: "bg-blue-700/70 dark:bg-blue-700/70"
-      },
-      {
-        icon: Mongo,
-        name: "Mongo",
-        style: "bg-green-500/70 dark:bg-green-500/70"
-      },
-      {
-        icon: NestJS,
-        name: "NestsJS",
-        style: "bg-rose-600/70 dark:bg-rose-600/70"
-      }
-    ],
-    image: pmv
   }
 ];
