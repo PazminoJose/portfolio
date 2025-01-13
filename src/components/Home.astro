@@ -6,6 +6,41 @@ import Mail from "@/icons/react/Mail.tsx";
 import SectionContainer from "./SectionContainer.astro";
 import Badge from "./react/Badge";
 import BadgeLink from "./react/BadgeLink";
+
+const badges = [
+  {
+    href: "https://github.com/PazminoJose",
+    icon: GitHub,
+    text: "GitHub",
+    color: "bg-black/50",
+    hoverColor: "hover:bg-gray-800",
+    darkColor: "dark:bg-black/50"
+  },
+  {
+    href: "https://www.linkedin.com/in/josé-pazmiño-6021ba25a/",
+    icon: Linkedin,
+    text: "Linkedin",
+    color: "bg-blue-600/50",
+    hoverColor: "hover:bg-blue-800",
+    darkColor: "dark:bg-blue-600/50"
+  },
+  {
+    href: "mailto:josepf.dev@gmail.com",
+    icon: Mail,
+    text: "josepf.dev@gmail.com",
+    color: "bg-cyan-800/50",
+    hoverColor: "hover:bg-cyan-900",
+    darkColor: "dark:bg-cyan-800/50"
+  },
+  {
+    href: "/docs/cv.pdf",
+    icon: CV,
+    text: "CV",
+    color: "bg-cyan-800/50",
+    hoverColor: "hover:bg-cyan-900",
+    darkColor: "dark:bg-cyan-800/50"
+  }
+];
 ---
 
 <SectionContainer class="py-44" id="home">
@@ -30,34 +65,16 @@ import BadgeLink from "./react/BadgeLink";
       and unique applications using modern technologies such as React, Next.js, Astro, Tailwind, and NestJS
     </p>
     <div class="flex max-w-fit flex-col gap-4 sm:flex-row">
-      <BadgeLink
-        className="bg-black/50 font-semibold hover:bg-gray-800 dark:bg-black/50"
-        href="https://github.com/PazminoJose"
-      >
-        <GitHub />
-         GitHub
-      </BadgeLink>
-      <BadgeLink
-        className="bg-blue-600/50 font-semibold  hover:bg-blue-800 dark:bg-blue-600/50 "
-        href="https://www.linkedin.com/in/josé-pazmiño-6021ba25a/"
-      >
-        <Linkedin />
-         Linkedin
-      </BadgeLink>
-      <BadgeLink
-        className="bg-cyan-800/50 font-semibold  hover:bg-cyan-900 dark:bg-cyan-800/50 "
-        href="mailto:josepf.dev@gmail.com"
-      >
-        <Mail />
-         josepf.dev@gmail.com
-      </BadgeLink>
-      <BadgeLink
-        className="bg-cyan-800/50 font-semibold  hover:bg-cyan-900 dark:bg-cyan-800/50 "
-        href="/docs/cv.pdf"
-      >
-        <CV />
-         CV
-      </BadgeLink>
+      {
+        badges.map(({ href, icon: Icon, text, color, hoverColor, darkColor }) => (
+          <BadgeLink className={`${color} font-semibold ${hoverColor} ${darkColor}`} href={href}>
+            <Fragment>
+              <Icon />
+            </Fragment>
+            {text}
+          </BadgeLink>
+        ))
+      }
     </div>
   </div>
 </SectionContainer>
