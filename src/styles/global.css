@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@import "tailwindcss";
+@plugin 'tailwindcss-animated';
+@plugin './hero.ts';
+@source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --animate-typing: typing 2s steps(20) infinite alternate, blink 0.7s infinite;
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+
+  --color-primary-50: #f0f3ff;
+  --color-primary-100: #dfe5ff;
+  --color-primary-200: #b8c9ff;
+  --color-primary-300: #7a9eff;
+  --color-primary-400: #346dfc;
+  --color-primary-500: #0949ee;
+  --color-primary-600: #0031cc;
+  --color-primary-700: #0026a5;
+  --color-primary-800: #042488;
+  --color-primary-900: #0a2170;
+  --color-primary-950: #020617;
+
+  --font-sans:
+    Poppins, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+
+  @keyframes typing {
+    0% {
+      width: 0%;
+      visibility: hidden;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+    100% {
+      border-color: white;
+    }
+  }
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
