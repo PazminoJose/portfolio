@@ -30,8 +30,6 @@ const { class: className, id } = Astro.props;
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("animate-fade-up", "animate-ease-out", "animate-delay-100");
-        } else {
-          entry.target.classList.remove("animate-fade-up", "animate-ease-out", "animate-delay-100");
         }
       });
     };

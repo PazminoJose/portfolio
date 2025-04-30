@@ -1,0 +1,59 @@
+---
+const languages = [
+  { code: "es", name: "Español", flag: "/images/flags/es.svg", href: "/" },
+  { code: "en", name: "English", flag: "/images/flags/en.svg", href: "/en/" }
+];
+const currentLocale = Astro.currentLocale || "es";
+---
+
+<div class="relative z-50 inline-block text-left">
+  <button
+    id="lang-toggle"
+    type="button"
+    class="inline-flex items-center gap-2 rounded-full border border-gray-700 px-4 py-2 text-xs font-medium text-white transition hover:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+  >
+    <img
+      src={languages.find((l) => l.code === currentLocale)?.flag}
+      alt={currentLocale}
+      class="h-4 w-4 rounded-sm"
+    />
+    {currentLocale.toUpperCase()}
+    <svg class="ml-1 h-3 w-3 fill-white" viewBox="0 0 20 20">
+      <path d="M5.25 7.5L10 12.25L14.75 7.5H5.25Z"></path>
+    </svg>
+  </button>
+
+  <div
+    id="lang-menu"
+    class="ring-opacity-5 absolute right-0 mt-2 hidden w-32 origin-top-right rounded-md bg-[#0f111a] shadow-lg ring-1 ring-black"
+  >
+    <ul class="py-1 text-sm text-white">
+      {
+        languages.map((lang) => (
+          <li>
+            <a href={lang.href} class="flex items-center gap-2 px-4 py-2 transition hover:bg-gray-700">
+              <img src={lang.flag} alt={lang.code} class="h-4 w-4 rounded-sm" />
+              {lang.code.toUpperCase()}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<script type="module">
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("lang-toggle");
+    const menu = document.getElementById("lang-menu");
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.add("hidden");
+      }
+    });
+  });
+</script>

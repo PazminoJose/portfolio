@@ -31,9 +31,27 @@ export const colors = {
 };
 
 export const levels: SkillLevel[] = [
-  { description: "beginner", color: colors.beginner },
-  { description: "intermediate", color: colors.intermediate },
-  { description: "advanced", color: colors.advanced }
+  {
+    description: {
+      en: "beginner",
+      es: "principiante"
+    },
+    color: colors.beginner
+  },
+  {
+    description: {
+      en: "intermediate",
+      es: "intermedio"
+    },
+    color: colors.intermediate
+  },
+  {
+    description: {
+      en: "advanced",
+      es: "avanzado"
+    },
+    color: colors.advanced
+  }
 ];
 
 export const skills: Skill[] = [

@@ -1,14 +1,28 @@
 ---
+import Badge from "@/components/ui/react/Badge";
 import { colors, levels, skills } from "@/lib/data/skills";
 import SkillIndicator from "./SkillIndicator.astro";
-import Badge from "./react/Badge";
+const currentLocale = Astro.currentLocale || "es";
+
+const texts = {
+  en: {
+    title: "Skills"
+  },
+  es: {
+    title: "Habilidades"
+  }
+}[currentLocale]!;
 ---
 
 <div class="flex w-full max-w-6xl flex-col items-center justify-center gap-6">
   <header class="flex flex-col gap-3 sm:flex-row">
-    <h3 class="text-center text-xl font-bold sm:text-left">Skills</h3>
+    <h3 class="text-center text-xl font-bold sm:text-left">{texts.title}</h3>
     <div class="flex gap-3">
-      {levels.map((level) => <SkillIndicator class={level.color}>{level.description}</SkillIndicator>)}
+      {
+        levels.map((level) => (
+          <SkillIndicator class={level.color}>{level.description[currentLocale]}</SkillIndicator>
+        ))
+      }
     </div>
   </header>
   <div

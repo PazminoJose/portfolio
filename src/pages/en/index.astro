@@ -4,13 +4,13 @@ import Contact from "@/components/sections/Contact/Contact.astro";
 import Experience from "@/components/sections/Experience/Experience.astro";
 import Home from "@/components/sections/Home.astro";
 import Projects from "@/components/sections/Projects/Projects.astro";
-import { Separator } from "@/components/ui/react/Separator";
-import Layout from "../layouts/Layout.astro";
+import Layout from "@/layouts/Layout.astro";
+import { Separator } from "@radix-ui/react-separator";
 
-const title = "Portafolio José Pazmiño - Desarrollador Fullstack y Programador";
-const description = `Bienvenido al portafolio de José Pazmiño: la fusión de creatividad y maestría técnica en
-Desarrollo Fullstack. Explora proyectos innovadores que muestran experiencia en diseño de front-end y sistemas 
-robustos de back-end, todo diseñado para ofrecer soluciones excepcionales centradas en el usuario.`;
+const title = "Portfolio José Pazmiño - Fullstack Developer and Programmer";
+const description = `Welcome to José Pazmiño's portfolio—experience the fusion of creativity and technical 
+mastery in Fullstack Development. Explore innovative projects showcasing expertise in front-end 
+design and robust back-end systems, all crafted to deliver exceptional user-centric solutions.`;
 ---
 
 <Layout title={title} description={description}>

@@ -14,7 +14,7 @@ const TimeLineIcon = ({ children }: ElementProps) => {
 
 const TimeLineDate = ({ children }: ElementProps) => {
   return (
-    <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{children}</time>
+    <time className="mb-1 text-sm leading-none font-normal text-gray-400 dark:text-gray-500">{children}</time>
   );
 };
 
@@ -24,7 +24,7 @@ const TimeLineTitle = ({ children }: ElementProps) => {
 
 const TimeLineDescription = ({ children }: ElementProps) => {
   return (
-    <p className="mb-4 text-pretty text-base font-normal text-gray-500 dark:text-gray-400">{children}</p>
+    <p className="mb-4 text-base font-normal text-pretty text-gray-500 dark:text-gray-400">{children}</p>
   );
 };
 const TimeLineContent = ({ children }: ElementProps) => {
@@ -38,7 +38,7 @@ interface TimeLineItemProps {
 
 export default function TimeLineItem({ useCustomIcon = false, children }: TimeLineItemProps) {
   return (
-    <li className="mb-10 ms-8">
+    <li className="ms-8 mb-10">
       {useCustomIcon ? null : (
         <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700"></div>
       )}

@@ -1,18 +1,39 @@
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from "@/components/ui/react/Accordion";
+import Badge from "@/components/ui/react/Badge";
+import BadgeLink from "@/components/ui/react/BadgeLink";
 import AppWindow from "@/icons/react/AppWindow";
 import GitHub from "@/icons/react/GitHub";
 import NPM from "@/icons/react/NPM";
-import { projectItems } from "@/lib/data/projectItems";
+import { projectItems as pi } from "@/lib/data/projectItems";
 import { cn } from "@/lib/utils";
 import { positiveMod } from "@/lib/utils/positiveMod";
+import type { ProjectItem } from "@/types/projectItem.type";
 import { useState } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./Accordion";
-import Badge from "./Badge";
-import BadgeLink from "./BadgeLink";
 
 const titleHeight = 40;
 
-export default function ProjectShowcase() {
+interface ProjectShowcaseProps {
+  locale: string;
+}
+export default function ProjectsShowcase({ locale = "es" }: ProjectShowcaseProps) {
   const [current, setCurrent] = useState<number>(0);
+  const projectItems: ProjectItem[] = pi[locale];
+
+  const texts = {
+    en: {
+      links: "Links",
+      technologies: "Technologies"
+    },
+    es: {
+      links: "Enlaces",
+      technologies: "Tecnologías"
+    }
+  }[locale]!;
 
   return (
     <div className="mx-auto flex w-full flex-col justify-center gap-10 px-4 md:flex-row md:items-center md:px-0">
@@ -33,7 +54,7 @@ export default function ProjectShowcase() {
                   <p className="mb-2">{item.description}</p>
                   {(item.githubUrl || item.liveUrl || item.npmUrl) && (
                     <>
-                      <h4 className="my-3 text-center text-lg font-semibold text-cyan-600">Links</h4>
+                      <h4 className="my-3 text-center text-lg font-semibold text-cyan-600">{texts.links}</h4>
                       <div className="mr-14 flex w-full justify-center gap-3">
                         {item.githubUrl && (
                           <BadgeLink
@@ -63,7 +84,9 @@ export default function ProjectShowcase() {
                     </>
                   )}
 
-                  <h4 className="my-3 text-center text-lg font-semibold text-cyan-600">Technologies</h4>
+                  <h4 className="my-3 text-center text-lg font-semibold text-cyan-600">
+                    {texts.technologies}
+                  </h4>
                   <div className="grid auto-cols-max grid-flow-col grid-cols-2 grid-rows-3 gap-x-3 gap-y-4 sm:grid-flow-row sm:grid-cols-4 sm:grid-rows-2">
                     {item.technologies?.map((technology) => (
                       <Badge key={technology.name} className={technology.style}>
@@ -98,7 +121,7 @@ export default function ProjectShowcase() {
               target="_blank"
               style={style}
               className={cn(
-                "panel left-0 top-0 block w-full",
+                "panel top-0 left-0 block w-full",
                 "translate-y-[var(--translate)] transition-transform md:translate-x-[var(--translate)]",
                 index === current ? "relative" : "absolute"
               )}

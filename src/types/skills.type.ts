@@ -1,3 +1,5 @@
+import type { LocalizedObject } from "./localizedObject.type";
+
 export type Skill = {
   name: string;
   level: "beginner" | "intermediate" | "advanced";
@@ -5,6 +7,6 @@ export type Skill = {
 };
 
 export type SkillLevel = {
-  description: string;
+  description: LocalizedObject<string>;
   color: string;
 };

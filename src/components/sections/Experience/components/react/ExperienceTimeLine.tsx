@@ -1,8 +1,8 @@
+import Badge from "@/components/ui/react/Badge";
+import TimeLine from "@/components/ui/react/TimeLine";
+import TimeLineItem from "@/components/ui/react/TimeLineItem";
 import Link from "@/icons/react/Link";
 import type { TimeLineElement } from "@/types/timeLineElement.type";
-import Badge from "./Badge";
-import TimeLine from "./TimeLine";
-import TimeLineItem from "./TimeLineItem";
 
 interface ExperienceTimeLineProps {
   data: TimeLineElement[];

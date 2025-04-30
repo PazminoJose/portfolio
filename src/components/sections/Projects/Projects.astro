@@ -1,0 +1,26 @@
+---
+import SectionContainer from "@/components/ui/SectionContainer.astro";
+import ProjectsShowcase from "./components/react/ProjectsShowcase";
+
+const currentLocale = Astro.currentLocale || "es";
+
+const texts = {
+  es: {
+    title: "Proyectos"
+  },
+  en: {
+    title: "Projects"
+  }
+}[currentLocale]!;
+---
+
+<SectionContainer id="projects">
+  <div class="relative flex flex-col gap-8 overflow-hidden">
+    <h2 class="text-center text-2xl font-semibold sm:ml-40 sm:text-left">{texts.title}</h2>
+    <div class="relative flex w-full items-center sm:mt-12">
+      <div class="w-full overflow-hidden py-8 sm:p-8">
+        <ProjectsShowcase client:only locale={currentLocale} />
+      </div>
+    </div>
+  </div>
+</SectionContainer>

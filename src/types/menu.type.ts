@@ -1,4 +1,6 @@
+import type { LocalizedObject } from "./localizedObject.type";
+
 export type Menu = {
-  label: string;
+  label: LocalizedObject<string>;
   href: string;
 };

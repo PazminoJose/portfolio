@@ -1,19 +1,32 @@
 ---
 import Steam from "@/icons/Steam.astro";
 import X from "@/icons/X.astro";
-import SectionContainer from "./SectionContainer.astro";
+import SectionContainer from "../ui/SectionContainer.astro";
 const dayBirth = new Date("1999-03-03");
 const age = new Date(Date.now() - dayBirth.getTime()).getFullYear() - 1970;
+const currentLocale = Astro.currentLocale || "es";
+
+const texts = {
+  en: {
+    title: "About me",
+    greeting: "Hi there!",
+    description: `Hi there! I'm José Pazmiño, a ${age} year old developer who leverages programming as a powerful tool to solve challenges. Beyond coding, I enjoy playing video games and watching anime.`
+  },
+  es: {
+    title: "Sobre mí",
+    greeting: "¡Hola!",
+    description: `¡Hola! Soy José Pazmiño, un desarrollador de ${age} años que aprovecha la programación como una herramienta poderosa para resolver desafíos. Más allá de la codificación, disfruto jugar videojuegos y ver anime.`
+  }
+}[currentLocale]!;
 ---
 
 <SectionContainer id="about">
   <div class="flex w-full flex-col gap-8">
-    <h2 class="text-center text-2xl font-semibold sm:ml-40 sm:text-left">About me</h2>
+    <h2 class="text-center text-2xl font-semibold sm:ml-40 sm:text-left">{texts.title}</h2>
     <div class="flex w-full flex-col items-center gap-8">
       <p class="max-w-4xl text-pretty">
-        <span class="text-xl font-bold">Hi there!</span>
-        I'm José Pazmiño, a {age} year old developer who leverages programming as a powerful tool to solve challenges.
-        Beyond coding, I enjoy playing video games and watching anime.
+        <span class="text-xl font-bold">{texts.greeting}</span>
+        {texts.description}
       </p>
       <div class="flex h-full flex-col gap-3 sm:grid sm:grid-cols-4 sm:grid-rows-2 sm:gap-4">
         <div

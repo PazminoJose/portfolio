@@ -1,0 +1,59 @@
+---
+import SectionContainer from "@/components/ui/SectionContainer.astro";
+import { TypeAnimation } from "react-type-animation";
+import FormContact from "./components/react/FormContact";
+const typeAnimatoRepeat = 1000;
+const currentLocale = Astro.currentLocale || "es";
+const texts = {
+  en: {
+    title: "Contact",
+    description:
+      "Eager to join forces? Shoot me a message detailing your needs. I'm all in to help bring your software aspirations to life. Drop a line, and let's create something remarkable together.",
+    typeAnimation: [
+      "Get in touch",
+      2500,
+      "Send me a message",
+      2500,
+      "I'll will reply you soon",
+      2500,
+      "Let's work together!",
+      2500
+    ]
+  },
+  es: {
+    title: "Contacto",
+    description:
+      "¿Listo para unir fuerzas? Envíame un mensaje detallando tus necesidades. Estoy aquí para ayudar a dar vida a tus aspiraciones de software. Déjame un mensaje y creemos algo extraordinario juntos.",
+    typeAnimation: [
+      "Ponte en contacto",
+      2500,
+      "Envíame un mensaje",
+      2500,
+      "Te responderé pronto",
+      2500,
+      "¡Trabajemos juntos!",
+      2500
+    ]
+  }
+}[currentLocale]!;
+---
+
+<SectionContainer id="contact" class="mb-14">
+  <div class="flex w-full flex-col gap-8">
+    <h2 class="text-center text-2xl font-semibold sm:ml-40 sm:text-left">{texts.title}</h2>
+    <div class="flex w-full flex-col items-center gap-8">
+      <TypeAnimation
+        sequence={texts.typeAnimation}
+        wrapper="span"
+        speed={20}
+        style={{ fontSize: "2em", display: "inline-block" }}
+        repeat={typeAnimatoRepeat}
+        client:visible
+      />
+      <p class="max-w-xl text-pretty">
+        {texts.description}
+      </p>
+      <FormContact client:idle locale={currentLocale} />
+    </div>
+  </div>
+</SectionContainer>

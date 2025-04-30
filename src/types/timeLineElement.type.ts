@@ -1,7 +1,8 @@
 import type { IconProps } from "@/icons/react/interfaces/IconProps";
+import type React from "react";
 
 export type TimeLineElement = {
-  icon?: ({ className }: IconProps) => JSX.Element;
+  icon?: ({ className }: IconProps) => React.JSX.Element;
   date: string;
   title: string;
   description: string;
@@ -10,7 +11,7 @@ export type TimeLineElement = {
 };
 
 export type Technology = {
-  icon: () => JSX.Element;
+  icon: () => React.JSX.Element;
   name: string;
   style: string;
 };

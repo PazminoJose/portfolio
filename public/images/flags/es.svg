@@ -1,0 +1,6 @@
+<!-- public/assets/flags/es.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 667">
+  <rect width="1000" height="667" fill="#aa151b"/>
+  <rect y="222" width="1000" height="222" fill="#f1bf00"/>
+  <!-- Optional: Add coat of arms SVG if needed -->
+</svg>
