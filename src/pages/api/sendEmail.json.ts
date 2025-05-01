@@ -3,6 +3,8 @@ import { Resend } from "resend";
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
+export const prerender = false;
+
 export const POST: APIRoute = async ({ request }: APIContext) => {
   const { email, message, name } = await request.json();
   const emailTo = import.meta.env.EMAIL as string;
