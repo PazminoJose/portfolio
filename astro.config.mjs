@@ -5,7 +5,7 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
-  output: "server",
+  output: "static",
   adapter: vercel(),
   i18n: {
     locales: ["es", "en"],
