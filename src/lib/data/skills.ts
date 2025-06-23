@@ -76,7 +76,7 @@ export const skills: Skill[] = [
   { name: "Java", icon: Java, level: "intermediate" },
   { name: "MySQL", icon: MySQL, level: "intermediate" },
   { name: "PostgreSQL", icon: PostgreSQL, level: "intermediate" },
-  { name: "React", icon: ReactIcon, level: "advanced" },
+  { name: "React", icon: ReactIcon, level: "intermediate" },
   { name: "NestJS", icon: NestJS, level: "advanced" },
   { name: "MongoDB", icon: Mongo, level: "advanced" }
 ];
