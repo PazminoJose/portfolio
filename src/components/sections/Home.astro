@@ -1,47 +1,9 @@
 ---
-import CV from "@/icons/react/CV";
-import GitHub from "@/icons/react/GitHub.tsx";
-import Linkedin from "@/icons/react/Linkedin.tsx";
-import Mail from "@/icons/react/Mail.tsx";
+import { badges } from "@/lib/data/badges";
 import SectionContainer from "../ui/SectionContainer.astro";
 import Badge from "../ui/react/Badge";
 import BadgeLink from "../ui/react/BadgeLink";
 const currentLocale = Astro.currentLocale || "es";
-
-const badges = [
-  {
-    href: "https://github.com/PazminoJose",
-    icon: GitHub,
-    text: "GitHub",
-    color: "bg-black/50",
-    hoverColor: "hover:bg-gray-800",
-    darkColor: "dark:bg-black/50"
-  },
-  {
-    href: "https://www.linkedin.com/in/josé-pazmiño-6021ba25a/",
-    icon: Linkedin,
-    text: "Linkedin",
-    color: "bg-blue-600/50",
-    hoverColor: "hover:bg-blue-800",
-    darkColor: "dark:bg-blue-600/50"
-  },
-  {
-    href: "mailto:josepf.dev@gmail.com",
-    icon: Mail,
-    text: "josepf.dev@gmail.com",
-    color: "bg-cyan-800/50",
-    hoverColor: "hover:bg-cyan-900",
-    darkColor: "dark:bg-cyan-800/50"
-  },
-  {
-    href: "/docs/cv.pdf",
-    icon: CV,
-    text: "CV",
-    color: "bg-cyan-800/50",
-    hoverColor: "hover:bg-cyan-900",
-    darkColor: "dark:bg-cyan-800/50"
-  }
-];
 
 const texts = {
   es: {
@@ -55,6 +17,8 @@ const texts = {
       "Passionate about programming and self-learning. I specialize in designing robust, interactive, scalable, and unique applications using modern technologies such as React, Next.js, Astro, Tailwind, and NestJS"
   }
 }[currentLocale]!;
+
+const localizedBadges = badges[currentLocale];
 ---
 
 <SectionContainer class="py-44" id="home">
@@ -79,7 +43,7 @@ const texts = {
     </p>
     <div class="flex max-w-fit flex-col gap-4 sm:flex-row">
       {
-        badges.map(({ href, icon: Icon, text, color, hoverColor, darkColor }) => (
+        localizedBadges.map(({ href, icon: Icon, text, color, hoverColor, darkColor }) => (
           <BadgeLink className={`${color} font-semibold ${hoverColor} ${darkColor}`} href={href}>
             <Fragment>
               <Icon />
