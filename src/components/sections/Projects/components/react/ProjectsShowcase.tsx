@@ -27,10 +27,12 @@ export default function ProjectsShowcase({ locale = "es" }: ProjectShowcaseProps
   const texts = {
     en: {
       links: "Links",
+      role: "Role",
       technologies: "Technologies"
     },
     es: {
       links: "Enlaces",
+      role: "Rol",
       technologies: "Tecnologías"
     }
   }[locale]!;
@@ -95,6 +97,13 @@ export default function ProjectsShowcase({ locale = "es" }: ProjectShowcaseProps
                       </Badge>
                     ))}
                   </div>
+                  <p className="mt-4 text-sm text-gray-500 italic dark:text-gray-400">
+                    {item.role && (
+                      <>
+                        <strong>{texts.role}:</strong> {item.role}
+                      </>
+                    )}
+                  </p>
                 </AccordionContent>
               </AccordionItem>
             );

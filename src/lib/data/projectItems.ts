@@ -42,6 +42,7 @@ export const projectItems: LocalizedObject<ProjectItem[]> = {
           style: "bg-green-500/70 dark:bg-green-500/70"
         }
       ],
+      role: "Author",
       githubUrl: "https://github.com/PazminoJose/nestjs-node-onesignal",
       npmUrl: new URL("https://www.npmjs.com/package/nestjs-node-onesignal"),
       image: npm
@@ -75,6 +76,7 @@ export const projectItems: LocalizedObject<ProjectItem[]> = {
           style: "bg-blue-700/70 dark:bg-blue-700/70"
         }
       ],
+      role: "Sole Developer",
       githubUrl: "https://github.com/PazminoJose/spotify-clone",
       liveUrl: new URL("https://spotify-clone-khaki-seven.vercel.app"),
       image: spotifyClone
@@ -118,6 +120,7 @@ export const projectItems: LocalizedObject<ProjectItem[]> = {
           style: "bg-blue-600/70 dark:bg-blue-600/70"
         }
       ],
+      role: "Full Stack Developer",
       githubUrl: "https://github.com/PazminoJose/vivo-vivo-app",
       image: vivoVivo
     },
@@ -159,6 +162,7 @@ export const projectItems: LocalizedObject<ProjectItem[]> = {
           style: "bg-green-700/70 dark:bg-green-700/70"
         }
       ],
+      role: "Contributor Frontend",
       image: artectt
     }
   ],
@@ -185,6 +189,7 @@ export const projectItems: LocalizedObject<ProjectItem[]> = {
           style: "bg-green-500/70 dark:bg-green-500/70"
         }
       ],
+      role: "Autor",
       githubUrl: "https://github.com/PazminoJose/nestjs-node-onesignal",
       npmUrl: new URL("https://www.npmjs.com/package/nestjs-node-onesignal"),
       image: npm
@@ -218,6 +223,7 @@ export const projectItems: LocalizedObject<ProjectItem[]> = {
           style: "bg-blue-700/70 dark:bg-blue-700/70"
         }
       ],
+      role: "Desarrollador Único",
       githubUrl: "https://github.com/PazminoJose/spotify-clone",
       liveUrl: new URL("https://spotify-clone-khaki-seven.vercel.app"),
       image: spotifyClone
@@ -261,6 +267,7 @@ export const projectItems: LocalizedObject<ProjectItem[]> = {
           style: "bg-blue-600/70 dark:bg-blue-600/70"
         }
       ],
+      role: "Desarrollador Full Stack",
       githubUrl: "https://github.com/PazminoJose/vivo-vivo-app",
       image: vivoVivo
     },
@@ -302,6 +309,7 @@ export const projectItems: LocalizedObject<ProjectItem[]> = {
           style: "bg-green-700/70 dark:bg-green-700/70"
         }
       ],
+      role: "Colaborador Frontend",
       githubUrl: "https://github.com/Puetate/arteCCT-app",
       image: artectt
     }

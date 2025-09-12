@@ -8,4 +8,5 @@ export type ProjectItem = {
   liveUrl?: URL;
   npmUrl?: URL;
   image: ImageMetadata;
+  role?: string;
 };
