@@ -302,6 +302,7 @@ export const projectItems: LocalizedObject<ProjectItem[]> = {
           style: "bg-green-700/70 dark:bg-green-700/70"
         }
       ],
+      githubUrl: "https://github.com/Puetate/arteCCT-app",
       image: artectt
     }
   ]

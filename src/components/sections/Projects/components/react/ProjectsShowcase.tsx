@@ -113,11 +113,11 @@ export default function ProjectsShowcase({ locale = "es" }: ProjectShowcaseProps
             zIndex: `calc(${projectItems.length} - var(--position))`
           } as React.CSSProperties;
 
-          return (
+          return item.liveUrl?.href ? (
             <a
               key={index}
               tabIndex={-1}
-              href={item.liveUrl?.href ?? item.npmUrl?.href ?? ""}
+              href={item.liveUrl?.href ?? item.npmUrl?.href ?? "/"}
               target="_blank"
               style={style}
               className={cn(
@@ -140,6 +140,31 @@ export default function ProjectsShowcase({ locale = "es" }: ProjectShowcaseProps
                 decoding="async"
               />
             </a>
+          ) : (
+            <div
+              key={index}
+              tabIndex={-1}
+              style={style}
+              className={cn(
+                "panel top-0 left-0 block w-full",
+                "translate-y-[var(--translate)] transition-transform md:translate-x-[var(--translate)]",
+                index === current ? "relative" : "absolute"
+              )}
+              data-card
+            >
+              <p className="code flex items-center justify-center py-1 text-sm" aria-hidden="true">
+                {item.liveUrl?.hostname ?? ""}
+              </p>
+              <img
+                src={item.image.src}
+                width={item.image.width}
+                height={item.image.height}
+                alt={`Example image for ${item.title}`}
+                className="w-full rounded-md object-cover object-left-top"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           );
         })}
       </div>
