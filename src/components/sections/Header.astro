@@ -7,8 +7,9 @@ const currentLocale = Astro.currentLocale || "es";
 
 <header class="sticky top-0 z-10 flex pt-2 sm:items-center sm:justify-center sm:pt-3">
   <nav
-    class="sm:bg-primary-950/50 relative flex flex-col items-center gap-4 p-2 px-4 sm:static sm:flex-row sm:rounded-full sm:border sm:border-black sm:backdrop-blur-2xl"
+    class="sm:bg-primary-950/50 relative flex flex-row items-center gap-4 p-2 px-4 sm:static sm:rounded-full sm:border sm:border-black sm:backdrop-blur-2xl"
   >
+  <div class="flex flex-col sm:flex-row">
     <Burger class="ml-2 sm:hidden" />
     <div
       class="navmenu-toggle absolute top-8 hidden flex-col gap-5 bg-transparent sm:static sm:flex sm:flex-row"
@@ -25,6 +26,7 @@ const currentLocale = Astro.currentLocale || "es";
         ))
       }
     </div>
+  </div>
     <LanguageSelector />
   </nav>
 </header>
